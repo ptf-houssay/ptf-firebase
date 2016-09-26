@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Firebase Stock-Database</title>
+	<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyDhlJa4l5_nPrQ1WGsXRHMjKmrnruxZ7jc",
+			authDomain: "stock-9fa62.firebaseapp.com",
+			databaseURL: "https://stock-9fa62.firebaseio.com/",
+			storageBucket: "stock-9fa62.appspot.com",
+			messagingSenderId: "675707266004"
+		};
+		firebase.initializeApp(config);
+		$(function(){
+			function enviar(producto, cantidad, local) {
+				var newProductKey = firebase.database().ref().child('productos').push().key;
+				firebase.database().ref('productos/'+newProductKey).set({
+			    producto,
+			    cantidad,
+					local,
+			  });
+			}
+			$('#boton').click(function(){
+				var prod = $('#prod').val();
+				var cant = $('#cant').val();
+				var loc = $('#loc').val();
+				console.log(prod ,cant, loc);
+				enviar(prod, cant, loc);
+			})
+		})
+	</script>
+</head>
+
+<body>
+	<h1>Primer prueba firebase base de datos</h1>
+	<input id="prod" placeholder="Ingresar producto">
+	<input id="cant" placeholder="Ingresar cantidad">
+	<input id="loc" placeholder="Ingresar local donde esta">
+	<button id="boton" type="text"> Probrar
+</body>
+
+</html>
