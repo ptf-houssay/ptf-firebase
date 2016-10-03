@@ -10,20 +10,22 @@
 	<script src="js/config.js"></script>
 	<script>
 		$(function(){
-			function enviar(producto, cantidad, local) {
+			function enviar(producto, cantidad, local, img) {
 				var newProductKey = firebase.database().ref().child('productos').push().key;
 				firebase.database().ref('productos/'+newProductKey).set({
 			    producto,
 			    cantidad,
 					local,
+					img,
 			  });
 			}
 			$('#boton').click(function(){
 				var prod = $('#prod').val();
 				var cant = $('#cant').val();
 				var loc = $('#loc').val();
-				console.log(prod ,cant, loc);
-				enviar(prod, cant, loc);
+				var img = $('#img').val();
+				console.log(prod ,cant, loc, img);
+				enviar(prod, cant, loc, img);
 			})
 		})
 	</script>
@@ -34,6 +36,7 @@
 	<input id="prod" placeholder="Ingresar producto">
 	<input id="cant" placeholder="Ingresar cantidad">
 	<input id="loc" placeholder="Ingresar local donde esta">
+	<input id="img" placeholder="Ingresar url de img donde esta">
 	<button id="boton" type="text"> Probrar
 </body>
 
