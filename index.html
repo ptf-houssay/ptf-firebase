@@ -11,7 +11,11 @@
 	<script>
 		$(function(){
 			function enviar(producto, cantidad, local, img) {
+
+				// Generamos key unica para el nuevo registro a incluir
 				var newProductKey = firebase.database().ref().child('productos').push().key;
+
+				// Enviamos el registro
 				firebase.database().ref('productos/'+newProductKey).set({
 			    producto,
 			    cantidad,
@@ -19,12 +23,13 @@
 					img,
 			  });
 			}
+
+			// Cuando se "clickea" el button con id = "boton" ...
 			$('#boton').click(function(){
-				var prod = $('#prod').val();
-				var cant = $('#cant').val();
-				var loc = $('#loc').val();
-				var img = $('#img').val();
-				console.log(prod ,cant, loc, img);
+				var prod = $('#prod').val(); // Obtenemos el valor ingresado en #prod
+				var cant = $('#cant').val(); // Obtenemos el valor ingresado en #cant
+				var loc = $('#loc').val();   // Obtenemos el valor ingresado en #loc
+				var img = $('#img').val();	 // Obtenemos el valor ingresado en #img
 				enviar(prod, cant, loc, img);
 			})
 		})

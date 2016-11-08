@@ -1,3 +1,4 @@
+// CODIGO GENERADO POR FIREBASE CONSOLE
 // Initialize Firebase
 var config = {
 	apiKey: "AIzaSyDhlJa4l5_nPrQ1WGsXRHMjKmrnruxZ7jc",
