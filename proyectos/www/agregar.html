@@ -27,12 +27,18 @@
 </head>
 
 <body>
-  <form id="datos-proyecto">
-    <label for="nombre">Nombre del proyecto</label><input type="text" id="nombre" name="nombre">
-    <label for="integrantes">Integrantes (separados por una , "coma")</label><input type="textarea" id="integrantes" name="integrantes">
-    <label for="nombre">Nombre del proyecto</label><input type="text" id="nombre" name="nombre">
-
-  </form>
+  <div class="seccion">
+    <h1>Agrega tu proyecto y participa del interclub</h1>
+    <img class="img-redonda" src="./img/interclub.jpg" alt="foto interclub + hackaton">
+  </div>
+  <div class="seccion">
+    <form id="datos-proyecto">
+      <label for="nombre">Nombre del proyecto</label><input type="text" id="nombre" name="nombre">
+      <label for="integrantes">Integrantes (separados por una , "coma")</label><textarea id="integrantes" rows="5" name="integrantes"></textarea>
+      <label for="tecnologias">Tecnologias o lenguajes utilizados</label><input type="text" id="tecnologias" name="tecnologias">
+      <button class="btn">Agregar!</button>
+    </form>
+  </div>
   <script type="text/javascript" src="js/script.js"></script>
 </body>
 
