@@ -1,0 +1,24 @@
+ul {
+  list-style: none;
+}
+
+img {
+  width: 150px;
+  height: auto;
+}
+
+.productos {
+  width: 1130px;
+  margin: auto;
+}
+
+li {
+  display: inline-block;
+}
+
+.prod div {
+  width: 300px;
+  margin: 20px;
+  border-color: 1px solid black;
+  text-align: left;
+}
