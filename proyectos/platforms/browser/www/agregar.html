@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' gap:; style-src 'self' 'unsafe-inline'; media-src *"
+  />
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Agregar</title>
+  <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAhHZJNfGc84wzou9HFoez9ewi6Yg877eI",
+      authDomain: "taller-mobile.firebaseapp.com",
+      databaseURL: "https://taller-mobile.firebaseio.com",
+      projectId: "taller-mobile",
+      storageBucket: "taller-mobile.appspot.com",
+      messagingSenderId: "1075774564042"
+    };
+    firebase.initializeApp(config);
+  </script>
+</head>
+
+<body>
+  <form id="datos-proyecto">
+    <label for="nombre">Nombre del proyecto</label><input type="text" id="nombre" name="nombre">
+    <label for="integrantes">Integrantes (separados por una , "coma")</label><input type="textarea" id="integrantes" name="integrantes">
+    <label for="nombre">Nombre del proyecto</label><input type="text" id="nombre" name="nombre">
+
+  </form>
+  <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+* {
+  -webkit-tap-highlight-color: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+  -webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color: #e4e4e4;
+  background-attachment: fixed;
+  font-family: "HelveticaNeue-Light", "HelveticaNeue", Helvetica, Arial,
+    sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0px;
+  overflow: visible;
+  padding: 0px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  background-color: #ffd312;
+  padding: 8px;
+  box-shadow: 0px 2px 1px #c29f13;
+  border-radius: 50px;
+  transition: 0.2s;
+}
+
+.btn:focus,
+.btn:hover {
+  box-shadow: 0px 0.5px 1px #c29f13;
+}
+
+#agrega {
+  color: white;
+  text-decoration: none;
+}
+
+.seccion {
+  text-align: center;
+  padding: 20px 0;
+}
