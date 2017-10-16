@@ -7,7 +7,7 @@ function enviar(producto, cantidad, local, img) {
 
   firebase
     .database()
-    .ref("productos/" + newProductKey)
+    .ref(`productos/${newProductKey}`)
     .set({
       producto: producto,
       cantidad: cantidad,
