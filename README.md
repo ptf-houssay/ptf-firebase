@@ -6,10 +6,10 @@
 
 ## Proyecto mobile para registrar proyectos en desarrollo
 
-###Agregra Proyecto
+### Agregra Proyecto
 ![agregar proyecto](./proyectos/agregar.png)
 
-###Ver Proyectos
+### Ver Proyectos
 ![ver proyecto](./proyectos/proyectos.png)
 
 
