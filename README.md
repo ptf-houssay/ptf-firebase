@@ -6,11 +6,8 @@
 
 ### Proyecto mobile para registrar proyectos en desarrollo
 
-##### Agregra Proyecto
-![agregar proyecto](./proyectos/agregar.png)
-
-##### Ver Proyectos
-![ver proyecto](./proyectos/proyectos.png)
+![agregar proyecto](./proyectos/agregar.png "Agregar Proyecto")
+![ver proyecto](./proyectos/proyectos.png "Ver Proyectos")
 
 
 [Ver aquí](https://ptf-houssay.github.io/ptf-firebase/proyectos/)
