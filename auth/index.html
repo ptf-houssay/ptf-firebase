@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAhHZJNfGc84wzou9HFoez9ewi6Yg877eI",
+      authDomain: "taller-mobile.firebaseapp.com",
+      databaseURL: "https://taller-mobile.firebaseio.com",
+      projectId: "taller-mobile",
+      storageBucket: "taller-mobile.appspot.com",
+      messagingSenderId: "1075774564042"
+    };
+    firebase.initializeApp(config);
+  </script>
+</head>
+
+<body>
+  <div id="perfil"></div>
+  <button id="login">Login con google</button>
+
+  <script>
+    function toggleSignIn() {
+      if (!firebase.auth().currentUser) {
+        // Si el usuario no esta "logueado"
+        var provider = new firebase.auth.GoogleAuthProvider();
+        // Usamos el lenguaje que tiene el dispositivo del usuario
+        firebase.auth().useDeviceLanguage();
+        provider.addScope('https://www.googleapis.com/auth/plus.login');
+        firebase.auth().signInWithRedirect(provider);
+
+        document.getElementById('login').innerText = "Login con Google"
+      } else {
+        // Si el usuario ya esta "logueado"
+        // hacemos un signOut
+        firebase.auth().signOut();
+
+        document.getElementById('login').innerText = "Logout"
+      }
+      document.getElementById('login').disabled = true;
+    }
+
+
+    function initApp() {
+      firebase.auth().getRedirectResult().then(function (result) {
+        var user = result.user;
+      }).catch(function (error) {
+        console.log(error)
+      });
+
+      document.getElementById('login').addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleSignIn();
+      });
+
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          // El usuario ya esta "logueado"
+          var displayName = user.displayName;
+          var email = user.email;
+          var photoURL = user.photoURL;
+
+          console.log(`Hola ${user.displayName}`)
+          var perfil = document.getElementById('perfil');
+          perfil.innerHTML = `
+            <h1>Hola ${displayName}</h1>
+            <img src="${photoURL}"/>
+           `
+          document.getElementById('login').innerText = "Logout"
+          console.log(user)
+        } else {
+          document.getElementById('login').innerText = "Login con Google"
+          var perfil = document.getElementById('perfil');
+          perfil.innerHTML = `
+            <p>No estas logueado</p>
+          `
+        }
+        document.getElementById('login').disabled = false;
+      });
+    }
+
+    window.onload = function () {
+      initApp();
+    };
+  </script>
+</body>
+
+</html>
