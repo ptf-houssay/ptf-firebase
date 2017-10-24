@@ -25,5 +25,6 @@ function guardarProyecto(nombre, integrantes, tech) {
       tecnologias: tecnologiasArray
     });
 
-  //window.location.href = "/";
+  // volvemos a la primer vista
+  window.location.href = "/";
 }
