@@ -13,14 +13,17 @@ function guardarProyecto(nombre, integrantes, tech) {
     .child("proyectos")
     .push().key;
 
+  var integrantesArray = integrantes.split(",");
+  var tecnologiasArray = tech.split(",");
+
   firebase
     .database()
-    .ref("proyectos/" + newProductKey)
+    .ref(`proyectos/${newProductKey}`)
     .set({
       nombre: nombre,
-      integrantes: integrantes,
-      tecnologias: tech
+      integrantes: integrantesArray,
+      tecnologias: tecnologiasArray
     });
 
-  window.location.href = "/";
+  //window.location.href = "/";
 }
